@@ -6,29 +6,53 @@ module Practica01 where
 data Shape = Circle Float | --representa el radio
             Square Float | --representa un lado
             Rectangle Float Float| --representa base y altura
-            Triangle Float | --representa un lado
+            Triangle Float| --representa cada uno un lado
             Trapeze Float Float Float --representa base mayor, base menor y altura
             deriving (Show)
 
 --Funcion que calcula el area de las figuras
+
+-- constante pi: definimos la constante pi para usarla en el caso del circuloare
+numeropi :: Float
+numeropi = 3.1416
+
+
 area :: Shape -> Float
-area = undefined
+area (Square x) = x ** 2
+area (Rectangle x y) = x * y
+area (Circle x) = (x**2) * numeropi
+area (Triangle x) = sqrt(s * (s-x)* (s-x) * (s-x))
+    where 
+        s= semiperimetro (Triangle x)
+area (Trapeze x y z) = ((x + y)/2) * z
+
+
+-- Obtener el semiperimetro para poder sacar el área del triangulo
+semiperimetro :: Shape -> Float
+semiperimetro (Triangle x) = perimeter (Triangle x) /2
 
 --Funcion que calcula el perimetro de las figuras
 perimeter :: Shape -> Float
-perimeter = undefined
+perimeter (Square x) = x * 4
+perimeter (Rectangle x y) = (x + y) * 2 
+perimeter (Circle x) = (2 * x) * numeropi
+perimeter (Triangle x) = x * 3
+perimeter (Trapeze x y z) = ((x + y)/2) * z
+
+
 
 
 --Ejercicio 2 (Les toca arreglar el sinonimo)
-type Point = Shape
+type Point = (Float,Float)
 
 -- Funcion para calcular la distancia entre dos puntos
 distance :: Point -> Point -> Float
-distance = undefined 
+distance (x,y) (x1,y1) = sqrt((x1-x)**2 + (y1-y)**2)
 
 --Funcion para calcular la distancia de un punto al origen
 from0 :: Point -> Float
-from0 = undefined
+from0 (x,y)= sqrt(x**2 + y **2)
+    
 
 --Ejercicio 3
 data Haskellium = Undefined
