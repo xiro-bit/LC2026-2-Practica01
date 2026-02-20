@@ -22,13 +22,12 @@ Si no les llegan a funcionar, es posible que el problema es que tengan una versi
 
 En esta sección deben eliminar esta línea de texto, borrar la leyenda "Integrante n" y escribir su nombre empezando por apellidos y su número de cuenta.
 
-+ Integrante 1
-    - No. de Cuenta: 
-+ Integrante 2
-    - No. de Cuenta: 
-+ Integrante 3
-    - No. de Cuenta: 
++ García Hernandez Greta Nicole
+     - No. de Cuenta: 322136313
++ Pérez García Blanca Xirone
+    - No. de Cuenta: 314213989
+
 
 ## Comentarios
 
-Recuerden que opcionalmente pueden agregar un comentario (ver los lineamientos de entrega). Si es el caso, borren esta línea y dejen su comentario.
+Se hicieron varias funciones auxiliares y constantes para poder realizar las implementaciones como las: de semiperimetro (el test me marco un warning porque no hicimos los demas casos y numero pi; palabraenCaracter y palabraEnReversa.
